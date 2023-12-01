@@ -11,7 +11,7 @@ export class FormatPriceBetterPipe implements PipeTransform {
       return value;
     }
     try {
-      return new Intl.NumberFormat(locale ?? undefined, {style: 'currency', currency}).format(value / 100);
+      return new Intl.NumberFormat(locale, {style: 'currency', currency}).format(value / 100);
     } catch (e: any) {
       return e.message
     }

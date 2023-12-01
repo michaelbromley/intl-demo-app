@@ -10,7 +10,7 @@ export class FormatPricePipe implements PipeTransform {
     if (typeof value !== 'number') {
       return value;
     }
-    return `$${numberWithCommas(value / 100)}`;
+    return `$${value / 100}`;
   }
 
 }
