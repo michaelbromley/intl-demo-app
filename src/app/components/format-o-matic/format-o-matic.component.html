@@ -1,7 +1,7 @@
-<h1 class="text-5xl max-w-2xl mx-auto">Intl Money Formatter</h1>
+<h1 class="text-5xl max-w-2xl mx-auto">Format-O-Matic 2000</h1>
 
 <div class="mt-20 max-w-2xl mx-auto">
-  <label for="number" class="block font-medium leading-6 text-gray-900">Enter a number of cents</label>
+  <label for="number" class="block font-medium leading-6 text-gray-900">Enter a number of ??</label>
   <div class="mt-2">
     <input type="number" name="number" id="number"
            [(ngModel)]="value"
@@ -10,14 +10,21 @@
 
   <div class="flex mt-4 gap-4">
     <div>
-      <label for="currency" class="block font-medium leading-6 text-gray-900">Currency</label>
+      <label for="currencyOrUnit" class="block font-medium leading-6 text-gray-900">Currency / Unit</label>
       <div class="mt-2">
-        <select class="input" id="currency" [(ngModel)]="currency">
+        <select class="input" id="currencyOrUnit" [(ngModel)]="currencyOrUnit">
           <option>USD</option>
           <option>GBP</option>
           <option>EUR</option>
           <option>MYR</option>
           <option>KRW</option>
+          <option>centimeter</option>
+          <option>fahrenheit</option>
+          <option>hour</option>
+          <option>microsecond</option>
+          <option>percent</option>
+          <option>yard</option>
+          <option>relative-days</option>
         </select>
       </div>
     </div>
@@ -43,5 +50,5 @@
 </div>
 
 <div class="mt-20 text-7xl text-center">
-  <div>{{ value | formatPriceBetter : currency : locale }}</div>
+  <div>{{ value | formatOMatic : style : currencyOrUnit : locale }}</div>
 </div>
