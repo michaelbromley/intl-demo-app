@@ -1,16 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'formatPrice1',
+  name: 'formatPriceBetter',
   standalone: true
 })
-export class FormatPrice1Pipe implements PipeTransform {
+export class FormatPriceBetterPipe implements PipeTransform {
 
   transform(value: unknown, ...args: unknown[]): unknown {
     if (typeof value !== 'number') {
       return value;
     }
-    return `$${(value / 100).toFixed(2)}`;
+    return new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'USD' }).format(value / 100);
   }
-
 }
