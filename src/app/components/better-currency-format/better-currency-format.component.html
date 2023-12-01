@@ -1,0 +1,29 @@
+<h1 class="text-5xl max-w-2xl mx-auto">Intl Money Formatter</h1>
+
+<div class="mt-20 max-w-2xl mx-auto">
+  <label for="number" class="block font-medium leading-6 text-gray-900">Enter a number of cents</label>
+  <div class="mt-2">
+    <input type="number" name="number" id="number"
+           [(ngModel)]="value"
+           class="input">
+  </div>
+
+  <div class="flex mt-4 gap-4">
+    <div>
+      <label for="currency" class="block font-medium leading-6 text-gray-900">Currency</label>
+      <div class="mt-2">
+        <input class="input" name="currency" id="currency" [(ngModel)]="currency" value="">
+      </div>
+    </div>
+    <div>
+      <label for="locale" class="block font-medium leading-6 text-gray-900">Locale</label>
+      <div class="mt-2">
+        <input class="input" name="locale" id="locale" [(ngModel)]="locale" value="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-20 text-7xl text-center">
+  <div>{{ value | formatPriceBetter : currency : locale }}</div>
+</div>

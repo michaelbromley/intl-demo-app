@@ -6,10 +6,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FormatPriceBetterPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
+  transform(value: unknown, currency: string = 'USD', locale: string | undefined): unknown {
     if (typeof value !== 'number') {
       return value;
     }
-    return new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'USD' }).format(value / 100);
+    try {
+      return new Intl.NumberFormat(locale ?? undefined, {style: 'currency', currency}).format(value / 100);
+    } catch (e: any) {
+      return e.message
+    }
   }
 }

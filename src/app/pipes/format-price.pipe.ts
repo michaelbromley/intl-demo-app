@@ -15,6 +15,26 @@ export class FormatPricePipe implements PipeTransform {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * From StackOverflow circa 2010: https://stackoverflow.com/a/2901298/772859
  */

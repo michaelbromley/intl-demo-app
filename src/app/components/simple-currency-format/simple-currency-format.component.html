@@ -1,0 +1,14 @@
+<h1 class="text-5xl max-w-2xl mx-auto">Money Formatter</h1>
+
+<div class="mt-20 max-w-2xl mx-auto">
+  <label for="number" class="block font-medium leading-6 text-gray-900">Enter a number of cents</label>
+  <div class="mt-2">
+    <input type="number" name="number" id="number"
+           [(ngModel)]="value"
+           class="input">
+  </div>
+</div>
+
+<div class="mt-20 text-7xl text-center">
+  <div>{{ value | formatPrice }}</div>
+</div>
